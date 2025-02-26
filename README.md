@@ -28,7 +28,21 @@ leetcode_submit/
 │── config/                    # 📂 Configuration layer
 │   ├── settings.py            # Reads the `.env` configuration file
 │
+│── tests/                      # 📂 Testing Directory
+│   ├── functional/              # 📂 General Testing (Business Logic)
+│   │   ├── test_config.py        # Test config/settings.py
+│   │   ├── test_login.py         # Test login_manager.py
+│   │   ├── test_submit_manager.py # Test submission function
+│   │   ├── test_result_parser.py  # Test result parser
+│   │
+│   ├── api/                     # 📂 API Testing
+│   │   ├── test_routes.py        # Test FastAPI (Unit Testing)
+│   │   ├── test_integration.py   # Test API Integration Testing (Integration Testing)
+│   │
+│   ├── conftest.py               # Pytest Setting
+│
 │── .env                       # ✅ Environment variables (LeetCode API keys & account)
 │── .gitignore                 # ✅ Ignored sensitive information
 │── requirements.txt           # ✅ List of dependencies (FastAPI, Playwright)
 │── cookies.json               # ✅ Playwright Session Cookies
+│── pytest.ini                 # ✅ Pytesting Setting (Avoid to use PYTHONPATH mannually) 
