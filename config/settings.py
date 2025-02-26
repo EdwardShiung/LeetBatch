@@ -1,17 +1,13 @@
-import os 
+import os
 from dotenv import load_dotenv
 
-# Read .env file
+# 加載 .env 檔案
 load_dotenv()
 
 class Settings:
-    """設定管理，從.env 讀取環境變數"""
     LEETCODE_USERNAME: str = os.getenv("LEETCODE_USERNAME")
     LEETCODE_PASSWORD: str = os.getenv("LEETCODE_PASSWORD")
-    
-    # 確保這些變數有值，否則拋出錯誤
-    if not LEETCODE_USERNAME or not LEETCODE_PASSWORD:
-        raise ValueError("🔔 環境變數 LEETCODE_USERNAME 或 LEETCODE_PASSWORD 未設置！")
-    
-# 創建全域
+    DATA_FOLDER: str = "db/leetcode_solutions"  # 本地存放程式碼的資料夾
+    CSV_FILE: str = "results.csv"  # 儲存結果的 CSV
+
 settings = Settings()
